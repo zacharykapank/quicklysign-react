@@ -1,6 +1,6 @@
 # quicklysign-react
 
-> Unofficial QuicklySign library for react
+> Unofficial QuicklySign widget for react
 
 [![NPM](https://img.shields.io/npm/v/quicklysign-react.svg)](https://www.npmjs.com/package/quicklysign-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
