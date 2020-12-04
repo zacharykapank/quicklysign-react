@@ -13,15 +13,18 @@ npm install --save quicklysign-react
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { FC } from 'react'
 
-import MyComponent from 'quicklysign-react'
-import 'quicklysign-react/dist/index.css'
+import QuicklySign from 'quicklysign-react'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+export const Example: FC = () => {
+  return (
+    <QuicklySign
+      client_id='Your client id'
+      url='url'
+      post_sign_url='url to redirect to after signing'
+    />
+  )
 }
 ```
 
