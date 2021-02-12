@@ -2,6 +2,12 @@ import * as React from 'react'
 import { EVENT } from './constants'
 import IframeResizer from 'iframe-resizer-react'
 
+export enum Enum_Message {
+  entity_updated = 'entity_updated',
+  document_status_changed = 'document_status_changed',
+  final_document_generated = 'final_document_generated'
+}
+
 export type Message = {
   action: string
   [key: string]: any
@@ -33,7 +39,7 @@ type Actionables = {
 // TODO add correct types
 type ParameterProps = {
   url: string
-  message_listener?: any
+  message_listener: (message: Enum_Message) => void
   on_update_success_listener?: any
   on_update_failure_listener?: any
   post_sign_url?: any
