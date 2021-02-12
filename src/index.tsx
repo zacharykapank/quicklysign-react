@@ -60,6 +60,7 @@ const QuicklySign: React.FC<ParameterProps> = ({
   ui_configuration,
   client_id,
   scrolling,
+  children,
   ...rest
 }) => {
   const resizerRef = React.useRef() as any
@@ -166,8 +167,8 @@ const QuicklySign: React.FC<ParameterProps> = ({
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }} {...rest}>
-      {rest.children
-        ? rest.children({
+      {children
+        ? children({
             update_status,
             switch_tab,
             update_ui_configuration,
