@@ -165,7 +165,7 @@ const QuicklySign: React.FC<ParameterProps> = ({
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }} {...rest}>
       {rest.children
         ? rest.children({
             update_status,
