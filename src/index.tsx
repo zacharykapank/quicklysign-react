@@ -46,6 +46,7 @@ type ParameterProps = {
   parameters_debug?: boolean
   ui_configuration?: any
   client_id: string
+  scrolling?: boolean
   children?(actions: Actionables): React.ReactElement
 }
 
@@ -58,6 +59,8 @@ const QuicklySign: React.FC<ParameterProps> = ({
   parameters_debug,
   ui_configuration,
   client_id,
+  scrolling,
+  children,
   ...rest
 }) => {
   const resizerRef = React.useRef() as any
@@ -163,9 +166,12 @@ const QuicklySign: React.FC<ParameterProps> = ({
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      {rest.children
-        ? rest.children({
+    <div
+      style={{ display: 'flex', flexDirection: 'column', overflowY: 'hidden' }}
+      {...rest}
+    >
+      {children
+        ? children({
             update_status,
             switch_tab,
             update_ui_configuration,
@@ -181,9 +187,14 @@ const QuicklySign: React.FC<ParameterProps> = ({
         onMessage={message_callback}
         src={pageURL}
         style={{ width: '1px', minWidth: '100%' }}
+        scrolling={scrolling}
       />
     </div>
   )
+}
+
+QuicklySign.defaultProps = {
+  scrolling: false
 }
 
 export default QuicklySign
